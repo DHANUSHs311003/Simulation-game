@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Game</title>
+</head>
+<body>
+    <h1>Simulation Game</h1>
+</body>
+<script>
+    /* Vehicle constructor function */
+
+function Vehicle (brand, model, speed, fuelType) {
+    this.brand = brand;
+    this.model = model;
+    this.speed = speed;
+    this.fuelType = fuelType;
+};
+
+Vehicle.prototype.accelerate = function () {
+    console.log("Incresing the speed 10..30...50...70..95..100....🏎️🏁🏎️🏁")
+};
+
+Vehicle.prototype.brake = function () {
+    console.log("Applied the brake🛑🛑")
+};
+
+Vehicle.prototype.refuel = function () {
+    console.log("Refueling ⛽⛽")
+};
+
+/* Car constructor function */
+
+function Car (brand, model, speed, fuelType, numberOfWheels) {
+
+    Vehicle.call(this, brand, model, speed, fuelType, numberOfWheels);
+
+    this.numberOfWheels = numberOfWheels;
+
+};
+
+Object.setPrototypeOf(Car.prototype, Vehicle.prototype);
+
+Car.prototype.honk = function () {
+    console.log("Honkk...!!!📯📯📯")
+};
+
+/* Airplane constructor function */
+
+ function Airplane (brand, model, speed, fuelType, numberOfEngines, hasLandingGear) {
+     
+    Vehicle.call(this, brand, model, speed, fuelType,numberOfEngines, hasLandingGear );
+
+    this.numberOfEngines = numberOfEngines;
+    this.hasLandingGear = hasLandingGear;
+
+ };
+
+ Object.setPrototypeOf(Airplane.prototype, Vehicle.prototype);
+
+ Airplane.prototype.takeOff = function () {
+    console.log("Airplane is taking off 🛫🛫")
+ };
+
+ /* Instance Of Car */
+
+  let car = new Car("Mercedes-Benz","S-Class", "155 miles per hour", "Petrol", 4);
+  
+   console.log(car);
+
+  /*Invoking the Methods */
+
+  car.accelerate();
+  car.brake();
+  car.refuel();
+  car.honk();
+
+  /* Instance Of Airplane */
+  
+   let  airplane = new Airplane("Gulfstream", "G700", "690 mph", "sustainable aviation fuel (SAF)", "two engines", true );
+
+    console.log(airplane);
+
+   /*Invoking the Methods */
+   
+  airplane.accelerate();
+  airplane.brake();
+  airplane.refuel();
+  airplane.takeOff();
+
+</script>
+</html>
