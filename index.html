@@ -19,15 +19,15 @@ function Vehicle (brand, model, speed, fuelType) {
 };
 
 Vehicle.prototype.accelerate = function () {
-    console.log("Incresing the speed 10..30...50...70..95..100....🏎️🏁🏎️🏁")
+    console.log("Incresing the speed 10..30...50...70..95..100....🏎️🏁🏎️🏁");
 };
 
 Vehicle.prototype.brake = function () {
-    console.log("Applied the brake🛑🛑")
+    console.log("Applied the brake🛑🛑");
 };
 
 Vehicle.prototype.refuel = function () {
-    console.log("Refueling ⛽⛽")
+    console.log("Refueling ⛽⛽");
 };
 
 /* Car constructor function */
@@ -43,7 +43,7 @@ function Car (brand, model, speed, fuelType, numberOfWheels) {
 Object.setPrototypeOf(Car.prototype, Vehicle.prototype);
 
 Car.prototype.honk = function () {
-    console.log("Honkk...!!!📯📯📯")
+    console.log("Honkk...!!!📯📯📯");
 };
 
 /* Airplane constructor function */
@@ -60,7 +60,7 @@ Car.prototype.honk = function () {
  Object.setPrototypeOf(Airplane.prototype, Vehicle.prototype);
 
  Airplane.prototype.takeOff = function () {
-    console.log("Airplane is taking off 🛫🛫")
+    console.log("Airplane is taking off 🛫🛫");
  };
 
  /* Instance Of Car */
